@@ -1,0 +1,150 @@
+.bird-menu-item{
+  padding-bottom:5px;
+}
+
+.bird-tab-title{
+  margin-top:5px;
+}
+
+.birds-plot-height .html-widget{
+  height:300px!important;
+}
+
+.birds-plot-height-short .html-widget{
+  height:262px!important;
+}
+
+.birds-plot-height-2 .html-widget{
+  height:350px!important;
+}
+
+.custom-graph-group-output [class*="col-"]{
+  border-right:1px solid #ecf0f5;
+}
+
+.custom-graph-group-output [class*="col-"]:nth-child(4n){
+  border-right:none;
+}
+
+/*.custom-graph-group-output .grid-pad > div:last-child{
+  border-right:none;
+}*/
+
+[class*="col-"]{
+  padding:0 15px!important;
+}
+
+.grid-pad [class*="col-"]{
+  padding:0!important;
+}
+
+.info-box-number{
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  font-size:35px;
+}
+
+.info-box{
+  margin-bottom:20px;
+}
+
+.box-footer .help-block{
+  margin:0;
+}
+
+.controls-label{
+  display:inline-block;
+  max-width:100%;
+  margin-bottom:5px;
+  font-weight:700;
+}
+
+.birds-network-title,
+.custom-graph-group-output .highcharts-title tspan{
+  font-family:"Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
+  font-size:12px;
+  font-weight:normal;
+}
+
+/*.sidebar-mini.sidebar-collapse .logo{
+  visibility:hidden;
+}*/
+
+.user-menu .img-circle{
+  width:100%!important;
+  height:auto!important;
+  border-width:0!important;
+  border-radius:0;
+}
+
+.visNetwork hr{
+  margin-top:0!important;
+}
+
+.label-legend-title, 
+.label-nodes-title{
+  font-size:100%;
+  color:#333;
+  padding-left:0;
+  padding-right:0;
+}
+
+.label-nodes-title{
+  display:inline-table;
+  margin-top:8px;
+}
+
+.label-legend-item{
+  font-size:85%;
+}
+
+.label-legend-icon-item{
+  display:inline-block;
+  margin-top:5px;
+}
+
+.label-nodes-item{
+  font-size:85%;
+  display:inline-table;
+  padding-top:.3em;
+  margin-bottom:2px;
+}
+
+.modal-content{
+  border-radius:3px!important;
+}
+
+/*.bird-coincidences-modal .col-sm-12 .nav-tabs-custom{
+  margin-bottom:0;
+  box-shadow:none;
+}
+
+.bird-coincidences-downloadbutton{
+  float:left;
+}*/
+
+@media (max-width: 767px){
+  .custom-graph-group-output [class*="col-"]{
+    border-right:none;
+  }
+
+  .custom-graph-group-output [class*="col-"]:nth-child(2n+1){
+    border-right:1px solid #ecf0f5;
+  }
+  /*.custom-graph-group-output [class*="col-"]{
+    border-right:none;
+  }*/
+}
+
+@media (max-width: 480px){
+  /*.table-condensed td:first-child, 
+  .table-condensed th:first-child,
+  .table-condensed td:last-child,
+  .table-condensed th:last-child,
+  .table-condensed thead span{display:none;}*/
+  
+  /*.custom-graph-group-output [class*="col-"]{
+    border-right:none;
+  }*/
+}

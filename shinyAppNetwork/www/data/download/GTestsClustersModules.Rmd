@@ -1,0 +1,102 @@
+---
+title: "GTestClustersModules"
+author: "BV"
+date: "18.06.2019"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+# Version 0.1.
+# Bernhard Voelkl
+# Last modified: 18.06.2019
+#
+#--------------------------------------------------------------------------------------------------------
+# The purpose of this script is to create a contingency table for DTW clusters and AI modules
+# for each pen and calculate the overall G-statistic (likelihood ratio X2 value) to see whether
+# DTW clusters and AI modules are independent (uncorrelated)
+# The critical statistic is the X2 value (plus df and p-value) from the Likelihood Ratio Test
+#--------------------------------------------------------------------------------------------------------
+
+# INITILALIZATION
+
+library(MASS)
+setwd("M:/Chicken Research/ChickenSocialNetwork")
+
+# Data Import
+
+nwm<-read.csv("networkmeasures_DTWcluster.csv")
+set.seed(1492)
+
+# Main
+
+
+# This is for pen 11: 
+
+contingencytable<-c()
+for(i in 1:4)
+{
+  for(m in 1:5)
+  {
+    contingencytable<-c(contingencytable,(sum(nwm$Community==11+0.1*m & nwm$mycl==i)))
+  }
+}
+data <- as.table(matrix(contingencytable, nrow = 4, byrow = TRUE, dimnames = list(DTW_Clusters = c('dtw1', 'dtw2', 'dtw3','dtw4'), AI_Modules = c('m1', 'm2', 'm3','m4','m5'))))
+loglm <- loglm( ~ DTW_Clusters + AI_Modules, data = data) 
+loglm
+
+fisher.test(data, workspace = 5000000)
+
+# This is for pen 12: 
+
+contingencytable<-c()
+for(i in 1:4)
+{
+  for(m in 1:4)
+  {
+    contingencytable<-c(contingencytable,(sum(nwm$Community==12+0.1*m & nwm$mycl==i)))
+  }
+}
+data <- as.table(matrix(contingencytable, nrow = 4, byrow = TRUE, dimnames = list(DTW_Clusters = c('dtw1', 'dtw2', 'dtw3','dtw4'), AI_Modules = c('m1', 'm2', 'm3','m4'))))
+loglm <- loglm( ~ DTW_Clusters + AI_Modules, data = data) 
+loglm
+
+fisher.test(data, workspace = 5000000)
+
+# This is for pen 13: 
+
+contingencytable<-c()
+for(i in 1:4)
+{
+  for(m in 1:5)
+  {
+    contingencytable<-c(contingencytable,(sum(nwm$Community==13+0.1*m & nwm$mycl==i)))
+  }
+}
+data <- as.table(matrix(contingencytable, nrow = 4, byrow = TRUE, dimnames = list(DTW_Clusters = c('dtw1', 'dtw2', 'dtw3','dtw4'), AI_Modules = c('m1', 'm2', 'm3','m4','m5'))))
+loglm <- loglm( ~ DTW_Clusters + AI_Modules, data = data) 
+loglm
+
+fisher.test(data, workspace = 5000000)
+
+# This is for pen 14: 
+
+contingencytable<-c()
+for(i in 1:4)
+{
+  for(m in 1:6)
+  {
+    contingencytable<-c(contingencytable,(sum(nwm$Community==14+0.1*m & nwm$mycl==i)))
+  }
+}
+data <- as.table(matrix(contingencytable, nrow = 4, byrow = TRUE, dimnames = list(DTW_Clusters = c('dtw1', 'dtw2', 'dtw3','dtw4'), AI_Modules = c('m1', 'm2', 'm3','m4','m5','m6'))))
+loglm <- loglm( ~ DTW_Clusters + AI_Modules, data = data) 
+loglm
+
+fisher.test(data, workspace = 5000000)
+```
+

@@ -20,16 +20,14 @@ install.packages(c("shiny", "shinydashboard", "shinydashboardPlus", "highcharter
 library(shiny)
 
 #### Easiest way is to use runGitHub
-runGitHub("chicken-similarity-temporal-activity-pattern", username = "vphi-bern", subdir = "shinyAppNetwork")
-
-#### Run a tar or zip file directly
-runUrl("https://github.com/vphi-bern/chicken-similarity-temporal-activity-pattern/archive/master.zip")
+runGitHub("chicken-similarity-temporal-activity-pattern", "vphi-bern", subdir = "shinyAppNetwork")
 ```
 
 Or you can clone the git repository, then use `runApp()`:
 ```R
 # First clone the repository with git. If you have cloned it into
-# ~/chicken-similarity-temporal-activity-pattern/shinyAppNetwork, first go to that directory, then use runApp().
+# ~/chicken-similarity-temporal-activity-pattern/shinyAppNetwork, 
+# then go to that directory, then use runApp().
 setwd("~/chicken-similarity-temporal-activity-pattern/shinyAppNetwork")
 runApp()
 ```
